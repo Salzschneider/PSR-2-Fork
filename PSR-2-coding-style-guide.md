@@ -27,6 +27,8 @@ interpreted as described in [RFC 2119].
 - Code MUST follow a "coding style guide" PSR [[PSR-1]].
 
 - **Code MUST use 4 spaces for indenting, not tabs.**
+ 
+- **Local variable names MUST be declared in $camelCase.**
 
 - There MUST NOT be a hard limit on line length; the soft limit MUST be 140
   characters; lines SHOULD be 140 characters or less.
