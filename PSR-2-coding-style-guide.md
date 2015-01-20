@@ -18,8 +18,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 interpreted as described in [RFC 2119].
 
 [RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
-[PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
-[PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
+[PSR-1]: https://github.com/Salzschneider/PSR-2-Fork/blob/master/PSR-1-basic-coding-standard.md
 
 
 1. Overview
@@ -110,11 +109,11 @@ The closing `?>` tag MUST be omitted from files containing only PHP.
 
 There MUST NOT be a hard limit on line length.
 
-The soft limit on line length MUST be 120 characters; automated style checkers
+The soft limit on line length MUST be 140 characters; automated style checkers
 MUST warn but MUST NOT error at the soft limit.
 
-Lines SHOULD NOT be longer than 80 characters; lines longer than that SHOULD
-be split into multiple subsequent lines of no more than 80 characters each.
+Lines SHOULD NOT be longer than 140 characters; lines longer than that SHOULD
+be split into multiple subsequent lines of no more than 140 characters each.
 
 There MUST NOT be trailing whitespace at the end of non-blank lines.
 
@@ -179,7 +178,7 @@ The term "class" refers to all classes, interfaces, and traits.
 The `extends` and `implements` keywords MUST be declared on the same line as
 the class name.
 
-The opening brace for the class MUST go on its own line; the closing brace
+The opening brace for the class MUST go on the next line; the closing brace
 for the class MUST go on the next line after the body.
 
 ```php
@@ -204,7 +203,10 @@ The `var` keyword MUST NOT be used to declare a property.
 
 There MUST NOT be more than one property declared per statement.
 
-Property names SHOULD NOT be prefixed with a single underscore to indicate
+*Property names SHOULD NOT be prefixed with a single underscore to indicate
+protected or private visibility.*
+
+Property names MUST be prefixed with a single underscore to indicate
 protected or private visibility.
 
 A property declaration looks like the following.
@@ -223,11 +225,14 @@ class ClassName
 
 Visibility MUST be declared on all methods.
 
-Method names SHOULD NOT be prefixed with a single underscore to indicate
+*Method names SHOULD NOT be prefixed with a single underscore to indicate
+protected or private visibility.*
+
+Method names MUST be prefixed with a single underscore to indicate
 protected or private visibility.
 
 Method names MUST NOT be declared with a space after the method name. The
-opening brace MUST go on its own line, and the closing brace MUST go on the
+opening brace MUST go on the next line following the method name, and the closing brace MUST go on the
 next line following the body. There MUST NOT be a space after the opening
 parenthesis, and there MUST NOT be a space before the closing parenthesis.
 
