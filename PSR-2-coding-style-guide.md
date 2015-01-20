@@ -27,7 +27,7 @@ interpreted as described in [RFC 2119].
 
 - Code MUST follow a "coding style guide" PSR [[PSR-1]].
 
-- Code MUST use 4 spaces for indenting, not tabs.
+- **Code MUST use 4 spaces for indenting, not tabs.**
 
 - There MUST NOT be a hard limit on line length; the soft limit MUST be 120
   characters; lines SHOULD be 80 characters or less.
@@ -70,11 +70,16 @@ class Foo extends Bar implements FooInterface
 {
     public function sampleFunction($a, $b = null)
     {
-        if ($a === $b) {
+        if ($a === $b) 
+        {
             bar();
-        } elseif ($a > $b) {
+        } 
+        elseif ($a > $b) 
+        {
             $foo->bar($arg1);
-        } else {
+        } 
+        else 
+        {
             BazClass::bar($arg2, $arg3);
         }
     }
@@ -191,27 +196,6 @@ class ClassName extends ParentClass implements \ArrayAccess, \Countable
 }
 ```
 
-Lists of `implements` MAY be split across multiple lines, where each
-subsequent line is indented once. When doing so, the first item in the list
-MUST be on the next line, and there MUST be only one interface per line.
-
-```php
-<?php
-namespace Vendor\Package;
-
-use FooClass;
-use BarClass as Bar;
-use OtherVendor\OtherPackage\BazClass;
-
-class ClassName extends ParentClass implements
-    \ArrayAccess,
-    \Countable,
-    \Serializable
-{
-    // constants, properties, methods
-}
-```
-
 ### 4.2. Properties
 
 Visibility MUST be declared on all properties.
@@ -284,30 +268,6 @@ class ClassName
 }
 ```
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
-
-When the argument list is split across multiple lines, the closing parenthesis
-and opening brace MUST be placed together on their own line with one space
-between them.
-
-```php
-<?php
-namespace Vendor\Package;
-
-class ClassName
-{
-    public function aVeryLongMethodName(
-        ClassTypeHint $arg1,
-        &$arg2,
-        array $arg3 = []
-    ) {
-        // method body
-    }
-}
-```
-
 ### 4.5. `abstract`, `final`, and `static`
 
 When present, the `abstract` and `final` declarations MUST precede the
@@ -348,19 +308,6 @@ $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
 ```
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
-
-```php
-<?php
-$foo->bar(
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
-);
-```
-
 5. Control Structures
 ---------------------
 
@@ -387,11 +334,16 @@ closing brace from the earlier body.
 
 ```php
 <?php
-if ($expr1) {
+if ($expr1) 
+{
     // if body
-} elseif ($expr2) {
+} 
+elseif ($expr2) 
+{
     // elseif body
-} else {
+} 
+else 
+{
     // else body;
 }
 ```
@@ -410,7 +362,8 @@ indented at the same level as the `case` body. There MUST be a comment such as
 
 ```php
 <?php
-switch ($expr) {
+switch ($expr) 
+{
     case 0:
         echo 'First case, with a break';
         break;
@@ -428,7 +381,6 @@ switch ($expr) {
 }
 ```
 
-
 ### 5.3. `while`, `do while`
 
 A `while` statement looks like the following. Note the placement of
@@ -436,19 +388,10 @@ parentheses, spaces, and braces.
 
 ```php
 <?php
-while ($expr) {
+while ($expr) 
+{
     // structure body
 }
-```
-
-Similarly, a `do while` statement looks like the following. Note the placement
-of parentheses, spaces, and braces.
-
-```php
-<?php
-do {
-    // structure body;
-} while ($expr);
 ```
 
 ### 5.4. `for`
@@ -458,7 +401,8 @@ spaces, and braces.
 
 ```php
 <?php
-for ($i = 0; $i < 10; $i++) {
+for ($i = 0; $i < 10; $i++) 
+{
     // for body
 }
 ```
@@ -470,7 +414,8 @@ parentheses, spaces, and braces.
 
 ```php
 <?php
-foreach ($iterable as $key => $value) {
+foreach ($iterable as $key => $value) 
+{
     // foreach body
 }
 ```
@@ -482,11 +427,16 @@ parentheses, spaces, and braces.
 
 ```php
 <?php
-try {
+try 
+{
     // try body
-} catch (FirstExceptionType $e) {
+} 
+catch (FirstExceptionType $e) 
+{
     // catch body
-} catch (OtherExceptionType $e) {
+} 
+catch (OtherExceptionType $e) 
+{
     // catch body
 }
 ```
@@ -523,80 +473,6 @@ $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
     // body
 };
 ```
-
-Argument lists and variable lists MAY be split across multiple lines, where
-each subsequent line is indented once. When doing so, the first item in the
-list MUST be on the next line, and there MUST be only one argument or variable
-per line.
-
-When the ending list (whether or arguments or variables) is split across
-multiple lines, the closing parenthesis and opening brace MUST be placed
-together on their own line with one space between them.
-
-The following are examples of closures with and without argument lists and
-variable lists split across multiple lines.
-
-```php
-<?php
-$longArgs_noVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
-) {
-   // body
-};
-
-$noArgs_longVars = function () use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
-) {
-   // body
-};
-
-$longArgs_longVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
-) use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
-) {
-   // body
-};
-
-$longArgs_shortVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
-) use ($var1) {
-   // body
-};
-
-$shortArgs_longVars = function ($arg) use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
-) {
-   // body
-};
-```
-
-Note that the formatting rules also apply when the closure is used directly
-in a function or method call as an argument.
-
-```php
-<?php
-$foo->bar(
-    $arg1,
-    function ($arg2) use ($var1) {
-        // body
-    },
-    $arg3
-);
-```
-
 
 7. Conclusion
 --------------
