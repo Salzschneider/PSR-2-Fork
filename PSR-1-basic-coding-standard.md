@@ -9,10 +9,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119].
 
-[RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
-[PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
-[PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
-
 
 1. Overview
 -----------
@@ -94,7 +90,8 @@ function foo()
 }
 
 // conditional declaration is *not* a side effect
-if (! function_exists('bar')) {
+if (! function_exists('bar')) 
+{
     function bar()
     {
         // function body
@@ -162,7 +159,7 @@ class Foo
 ### 4.2. Properties
 
 This guide intentionally avoids any recommendation regarding the use of
-`$StudlyCaps`, `$camelCase`, or `$under_score` property names.
+`$StudlyCaps` or `$under_score` property names.
 
 Whatever naming convention is used SHOULD be applied consistently within a
 reasonable scope. That scope may be vendor-level, package-level, class-level,
