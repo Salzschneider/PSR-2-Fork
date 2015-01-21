@@ -250,7 +250,7 @@ class ClassName
         // method body
     }
     
-    prrivate function _fooBarBaz3($arg1, &$arg2, $arg3 = [])
+    private function _fooBarBaz3($arg1, &$arg2, $arg3 = [])
     {
         // method body
     }
@@ -448,6 +448,10 @@ catch (FirstExceptionType $e)
 catch (OtherExceptionType $e) 
 {
     // catch body
+}
+finally 
+{
+    // finally body
 }
 ```
 
