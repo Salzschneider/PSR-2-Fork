@@ -214,6 +214,8 @@ namespace Vendor\Package;
 class ClassName
 {
     public $foo = null;
+    protected $_baz = null;
+    private $_bar = null;
 }
 ```
 
@@ -239,6 +241,16 @@ namespace Vendor\Package;
 class ClassName
 {
     public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+    
+    protected function _fooBarBaz2($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+    
+    prrivate function _fooBarBaz3($arg1, &$arg2, $arg3 = [])
     {
         // method body
     }
