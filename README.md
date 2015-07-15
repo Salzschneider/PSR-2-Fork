@@ -7,7 +7,28 @@ I am bothered by the fact that opening braces for classes and functions MUST go 
 Differences
 ----------------
 - opening braces for control structures MUST go on the new line
+- else elseif are on the next line as the closing brace from the earlier body
+- catch and finally are on the next line as the closing brace from the earlier body
+- do-while, while is on the next line as the closing brace from the earlier body
 - that's all :)
+ 
+Examples
+----------------
+```php
+<?php
+if ($expr1) 
+{
+    // if body
+} 
+elseif ($expr2) 
+{
+    // elseif body
+} 
+else 
+{
+    // else body;
+}
+```
 
 Issues
 ----------------
